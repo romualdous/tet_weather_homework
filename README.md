@@ -10,7 +10,7 @@
 ## Endpoints
 *To start working with TET Homework Weather test.* <br>
 Endpoint : `https://localhost/weather` <br>
-  Method:`POST`
+  Method:`GET`
   <br> 
   Optional parametr : `refresh` -> type:`bool` 
   <br>
@@ -36,6 +36,7 @@ If any of this 3rd party API will not work,controller will drop exception.
 4) Docker
 5) Composer
 6) GitHub
+7) Postman
 
 ## P.S 
 In `DockerFile`,before creating containers,i inserted version `5.4` of symfony. But he still upgraded my symfony to `6.2`,for no reason.I recognized it later,when homework was almost done.
