@@ -20,6 +20,7 @@ Endpoint : `https://localhost/weather` <br>
 *When building up docker container,it will create database in postgressql,called WeatherTest*
 1) Configure `docker-compose.yml` file to modify database login/password/db_name in field `DATABASE_URL`. (By default : `Login : root | Password : root | db_name : WeatherTest`.)
 2) To modify connection datas,please open `.env` and mofidy -> `DATABASE_URL` , before executing console command to create docker container.
+3) Main database properties,you can find starting from `Line:70` in `docker-compose.yml`.
 
 ## 3rd API SERVICES
 *To make this homework,i created accounts on website : https://openweathermap.org and https://ipstack.com to get API keys for request*
