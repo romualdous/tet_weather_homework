@@ -8,11 +8,11 @@
 4. Run `docker compose down` to stop the Docker containers.
 
 ## Endpoints
-*To start working with TET Homework Weather test.*
-Endpoint : https://localhost/weather <br>
- || Method:[POST] ||
+*To start working with TET Homework Weather test.* <br>
+Endpoint : `https://localhost/weather` <br>
+  Method:`POST`
   <br> 
-  optional parametr : `refresh` -> type:`bool` 
+  Optional parametr : `refresh` -> type:`bool` 
   <br>
   (If `refresh` provided to request,controller will force to update clients weather ,even if its cashed or not. Force update.)
 
@@ -24,9 +24,9 @@ Endpoint : https://localhost/weather <br>
 ## 3rd API SERVICES
 *To make this homework,i created accounts on website : https://openweathermap.org and https://ipstack.com to get API keys for request*
 1) For test purpose you still can use my API Keys to make testing.
-2) If you wish to modify them,please open `.env` file , and mofidy : 
-    2.1) `IPSTACK_API_KEY` -> https://ipstack.com
-    2.2) `WEATHER_API_KEY` -> https://openweathermap.org
+2) If you wish to modify them,please open `.env` file , and mofidy : <br> 
+    2.1) `IPSTACK_API_KEY` -> https://ipstack.com <br>
+    2.2) `WEATHER_API_KEY` -> https://openweathermap.org <br>
 If any of this 3rd party API will not work,controller will drop exception.
 
 ## Used tools
