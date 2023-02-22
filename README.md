@@ -9,7 +9,12 @@
 
 ## Endpoints
 *To start working with TET Homework Weather test.*
-Endpoint : https://localhost/weather || Method:[POST] || optional parametr : `refresh` -> type:`bool` (If `refresh` provided to request,controller will force to update clients weather ,even if its cashed or not. Force update.)
+Endpoint : https://localhost/weather <br>
+ || Method:[POST] ||
+  <br> 
+  optional parametr : `refresh` -> type:`bool` 
+  <br>
+  (If `refresh` provided to request,controller will force to update clients weather ,even if its cashed or not. Force update.)
 
 ## Database
 *When building up docker container,it will create database in postgressql,called WeatherTest*
