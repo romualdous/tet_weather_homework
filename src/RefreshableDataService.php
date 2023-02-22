@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class RefreshableDataService extends UserRepository
 {
-    public function checkRefreshableStatus(Request $request,string $ip_adress): bool
+    public function checkRefreshableStatus(Request $request): bool
     {
         $getRequestData = json_decode($request->getContent(), false);
         $isRefreshable = $getRequestData->refresh ?? false;

@@ -16,7 +16,7 @@ class LocationIPService
 
     public function getUsersLocation(string $ip, string $api_key, HttpClientInterface $client)
     {
-        $ipLocation = $client->request('POST', 'http://api.ipstack.com/89.254.150.224?access_key=' . $api_key);
+        $ipLocation = $client->request('POST', 'http://api.ipstack.com/'.$ip.'?access_key=' . $api_key);
         $ipLocationData = $ipLocation->getContent();
 
         return json_decode($ipLocationData);
