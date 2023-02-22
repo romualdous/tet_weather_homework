@@ -1,41 +1,44 @@
 # Symfony Docker
 
-A [Docker](https://www.docker.com/)-based installer and runtime for the [Symfony](https://symfony.com) web framework, with full [HTTP/2](https://symfony.com/doc/current/weblink.html), HTTP/3 and HTTPS support.
-
-![CI](https://github.com/dunglas/symfony-docker/workflows/CI/badge.svg)
-
 ## Getting Started
 
 1. If not already done, [install Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
 2. Run `docker compose build --pull --no-cache` to build fresh images
-3. Run `docker compose up` (the logs will be displayed in the current shell)
-4. Open `https://localhost` in your favorite web browser and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
-5. Run `docker compose down --remove-orphans` to stop the Docker containers.
+3. Run `docker compose up` To start docker containers
+4. Run `docker compose down` to stop the Docker containers.
 
-## Features
+## Endpoints
+*To start working with TET Homework Weather test.*
+Endpoint : https://localhost/weather || Method:[POST] || optional parametr : `refresh` -> type:`bool` (If `refresh` provided to request,controller will force to update clients weather ,even if its cashed or not. Force update.)
 
-* Production, development and CI ready
-* [Installation of extra Docker Compose services](docs/extra-services.md) with Symfony Flex
-* Automatic HTTPS (in dev and in prod!)
-* HTTP/2, HTTP/3 and [Preload](https://symfony.com/doc/current/web_link.html) support
-* Built-in [Mercure](https://symfony.com/doc/current/mercure.html) hub
-* [Vulcain](https://vulcain.rocks) support
-* Native [XDebug](docs/xdebug.md) integration
-* Just 2 services (PHP FPM and Caddy server)
-* Super-readable configuration
+## Database
+*When building up docker container,it will create database in postgressql,called WeatherTest*
+1) Configure `docker-compose.yml` file to modify database login/password/db_name in field `DATABASE_URL`. (By default : `Login : root | Password : root | db_name : WeatherTest`.)
+2) To modify connection datas,please open `.env` and mofidy -> `DATABASE_URL` , before executing console command to create docker container.
+
+## 3rd API SERVICES
+*To make this homework,i created accounts on website : https://openweathermap.org and https://ipstack.com to get API keys for request*
+1) For test purpose you still can use my API Keys to make testing.
+2) If you wish to modify them,please open `.env` file , and mofidy : 
+    2.1) `IPSTACK_API_KEY` -> https://ipstack.com
+    2.2) `WEATHER_API_KEY` -> https://openweathermap.org
+If any of this 3rd party API will not work,controller will drop exception.
+
+## Used tools
+1) Phpstorm as IDE
+2) HeidiSQL as Database Connection tool,or PhpStorm included databsae connection.
+3) Visual Code
+4) Docker
+5) Composer
+6) GitHub
+
+## P.S 
+In `DockerFile`,before creating containers,i inserted version `5.4` of symfony. But he still upgraded my symfony to `6.2`,for no reason.I recognized it later,when homework was almost done.
+Php version configured correct to `8.1.16`. 
 
 **Enjoy!**
 
-## Docs
-
-1. [Build options](docs/build.md)
-2. [Using Symfony Docker with an existing project](docs/existing-project.md)
-3. [Support for extra services](docs/extra-services.md)
-4. [Deploying in production](docs/production.md)
-5. [Debugging with Xdebug](docs/xdebug.md)
-6. [TLS Certificates](docs/tls.md)
-7. [Using a Makefile](docs/makefile.md)
-8. [Troubleshooting](docs/troubleshooting.md)
+## Homework made : Romans Rjabcevs
 
 ## License
 
